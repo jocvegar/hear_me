@@ -4,6 +4,10 @@
   "description": "What&#39;s is playing on spotify",
   "author": "Jose",
   "private": true,
+  "engines": 
+    {
+      "node": "v12.15.x"
+    },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
