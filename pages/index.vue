@@ -1,10 +1,22 @@
 <template>
-  <section>
-    <NowPlaying v-if="showTrack" :nowPlaying="track" :isPlaying="isPlaying"/>
-    <p v-if="!isConnected">
-      😭 {{ $nuxt.layout && $nuxt.layout.authorName }} hasn't connected yet. 😭
-    </p>
-  </section>
+  <div>
+    <b-container fluid class="pt-5">
+      <b-row v-if="isConnected">
+        <b-col cols="12" md="4" class="text-center pt-5">
+        </b-col>
+        <b-col cols="12" md="8" class="pt-5">
+          <h4 class="display-4 text-center">Escuchando de Spotify</h4>
+          <br>
+          <NowPlaying v-if="showTrack" :nowPlaying="track" :isPlaying="isPlaying"/>
+        </b-col>
+      </b-row>
+      <b-row v-else>
+        <p v-if="!isConnected">
+          😭 {{ $nuxt.layout && $nuxt.layout.authorName }} hasn't connected yet. 😭
+        </p>
+      </b-row>
+    </b-container>
+  </div>
 </template>
 
 <script>
@@ -37,19 +49,7 @@ export default {
 </script>
 
 <style scoped>
-section {
-  min-width: 300px;
-  transform: translateY(-50%);
-  max-width: 750px;
-  margin: auto;
-  padding: 1em;
-}
-
-@media (max-width: 600px) {
-  section {
-    transform: translateY(-10%) translateX(-2vw);
-    width: 65vw;
-    min-width: 200px;
-  }
+h4 {
+  margin-bottom: 1.3rem;
 }
 </style>

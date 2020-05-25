@@ -1,20 +1,25 @@
 <template>
-  <transition name="fade">
+  <div>
+    <transition name="fade">
     <section>
       <aside>
-        <img v-if="image" :src="image" alt="Album Artwork">
+        <b-img v-if="image" :src="image" alt="Album Artwork" fluid></b-img>
         <Progress :class="className" :progressPercent="progress" :image="image"/>
       </aside>
       <div class="metadata">
         <h2 aria-live="polite">{{name}}</h2>
         <p aria-live="polite">{{artistsList}}</p>
         <p :class="statusClass">
-          <span>{{$nuxt.layout && $nuxt.layout.authorName}} {{ status }}.</span>
-          <a v-if="href" :href="href">Listen?</a>
+          <span>{{authorName}} {{ status }}.</span>
+         
+          <b-button variant="outline-info" v-if="href" :href="href">
+            Escuchame
+          </b-button>
         </p>
-      </div>
+      </div>   
     </section>
   </transition>
+  </div>
 </template>
 
 <script>
@@ -24,7 +29,11 @@ export default {
   components: { Progress },
   props: ['isPlaying', 'nowPlaying'],
   data() {
-    return { staleTimer: '', trackTimer: '' }
+    return { 
+      staleTimer: '', 
+      trackTimer: '',
+      authorName: "JoC"
+    }
   },
   computed: {
     className() {
@@ -156,13 +165,14 @@ section:after {
 }
 
 section:before {
-  transform: rotate(3deg);
+  transform: rotate(2deg);
   background: rgba(255, 255, 255, 0.03);
 }
 .metadata {
-  padding-left: 1.4em;
+  padding-left: 4em;
   position: relative;
   z-index: 2;
+  color: white;
 }
 h2 {
   font-family: 'Oswald', monospace;
@@ -193,7 +203,7 @@ p {
   white-space: nowrap;
 }
 .is-playing span {
-  opacity: 0;
+  opacity: 60%;
   transition: opacity 600ms ease-out;
 }
 

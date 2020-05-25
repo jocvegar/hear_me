@@ -8,6 +8,7 @@
       </defs>
       <rect height="25.5" width="25.5" class="image" x="0" y="0"></rect>
     </svg>
+
     <svg class="progress" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -39,19 +40,20 @@ export default {
 <style scoped>
 div {
   filter: grayscale(0);
-  transform: rotate(-2deg) scale(0.9);
+  transform: rotate(0deg) scale(0.9);
 }
 .is-paused {
   filter: grayscale(80%);
   transition: all 600ms ease-out;
 }
-svg {
-  height: 100%;
-  width: 100%;
-}
+
 svg.album {
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+  height: 100%;
+  width: 100%;
+  transform: scale(0.98);
 }
+
 svg.progress {
   position: absolute;
   top: 0;
@@ -62,6 +64,9 @@ svg.progress {
     drop-shadow(0 0 2px var(--colorBrightBlue))
     drop-shadow(0 0 3px var(--colorBrightBlue))
     drop-shadow(0 0 5px var(--colorBrightBlue)) opacity(65%) contrast(150%);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
 .bar {
   stroke: url(#gradient);

@@ -2,17 +2,14 @@
   <div class="base">
     <Header :isAuth="isAuth"/>
     <nuxt/>
-    <Footer/>
-    <nuxt-link v-if="isAuth" class="area-close" aria-hidden="true" to="/" name="index"></nuxt-link>
   </div>
 </template>
 
 <script>
 import Header from '~/components/Header.vue'
-import Footer from '~/components/Footer.vue'
 
 export default {
-  components: { Header, Footer },
+  components: { Header },
   titleShort: 'escuchame',
   authorName: 'JoC',
   computed: {
