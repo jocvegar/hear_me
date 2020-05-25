@@ -31,7 +31,7 @@ export default {
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css?family=Bungee+Hairline|Oswald'
+          href: 'https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap'
         }
       ]
     }
@@ -50,7 +50,7 @@ body {
   padding: 0;
   margin: 0;
   color: white;
-  font-family: 'Bungee Hairline', monospace;
+  font-family: 'Chelsea Market', cursive;
 }
 .base {
   background-size: cover;
