@@ -4,12 +4,11 @@
   "description": "What&#39;s is playing on spotify",
   "author": "Jose",
   "private": true,
-  "engines": 
-    {
-      "node": "v12.15.x"
-    },
+  "engines": {
+    "node": "v12.15.x"
+  },
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nodemon --watch api --exec \"nuxt\"",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -19,12 +18,15 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
+    "@types/async-redis": "^1.1.1",
     "async-redis": "^1.1.7",
+    "cross-env": "^7.0.2",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "nodemon": "^2.0.4",
     "prettier": "^1.19.1"
   }
 }

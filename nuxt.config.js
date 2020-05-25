@@ -44,10 +44,6 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
   ],
-  env: {
-    spotifyId: process.env.CLIENT_ID,
-    clientUrl: process.env.CLIENT_URL
-  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -58,10 +54,16 @@ export default {
   ** Build configuration
   */
   build: {
+    watch: ['api'],
     /*
     ** You can extend webpack config here
     */
     extend (config, ctx) {
     }
-  }
+  },
+  serverMiddleware: ['~/api'],
+  env: {
+    spotifyId: process.env.CLIENT_ID,
+    clientUrl: process.env.CLIENT_URL
+  },
 }
