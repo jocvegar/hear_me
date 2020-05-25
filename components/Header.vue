@@ -1,52 +1,34 @@
 <template>
-  <header>
-    <h1>
-      {{$nuxt.layout && $nuxt.layout.authorName}} {{ $nuxt.layout && $nuxt.layout.titleShort }}
-      <nuxt-link to="/auth" name="auth" aria-label="Login" :aria-current="isAuth"/>
-    </h1>
-  </header>
+	<div>
+		<b-navbar toggleable="lg" type="dark" variant="info">
+			<b-navbar-brand nuxt-link to="/" name="Home">Music Me</b-navbar-brand>
+
+			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+			<b-collapse id="nav-collapse" is-nav>
+				<b-navbar-nav>
+					<b-nav-item nuxt-link to="/about" name="about">About Me</b-nav-item>
+				</b-navbar-nav>
+
+				<!-- Right aligned nav items -->
+				<b-navbar-nav v-if="isAuth" class="ml-auto">
+					<b-nav-item nuxt-link to="/" name="Home">Back</b-nav-item>
+				</b-navbar-nav>
+				<b-navbar-nav v-if="!isAuth && !isConnected" class="ml-auto">
+					<b-nav-item nuxt-link to="/auth" name="Home">Login</b-nav-item>
+				</b-navbar-nav>
+			</b-collapse>
+		</b-navbar>
+	</div>
 </template>
 
 <script>
 export default {
-  props: ['isAuth']
+	props: ['isAuth'],
+	computed: {
+		isConnected() {
+			return this.$store.state.isConnected
+		}
+	}	
 }
 </script>
-
-<style scoped>
-h1 {
-  line-height: 0.65em;
-  font-family: 'Oswald', monospace;
-  letter-spacing: 1px;
-  font-size: 15em;
-  transform: rotate(-3deg) translateY(-50%);
-  -webkit-box-reflect: below 0px
-    linear-gradient(transparent, rgba(255, 255, 255, 0.3));
-}
-h1 a {
-  display: inline-block;
-  height: 21px;
-  width: 21px;
-  background-image: url(~assets/spotify.svg);
-  background-size: cover;
-  filter: brightness(300%) opacity(30%);
-  position: absolute;
-  bottom: 0;
-}
-h1 a:hover {
-  filter: brightness(300%) opacity(60%);
-}
-h1 a:after,
-h1 a:before {
-  content: none;
-}
-header {
-  filter: blur(0);
-  transition: all 600ms ease-out;
-}
-p {
-  width: 40%;
-  margin: auto;
-  min-width: 320px;
-}
-</style>

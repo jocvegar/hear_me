@@ -43,7 +43,6 @@ section {
   max-width: 750px;
   margin: auto;
   padding: 1em;
-  margin-top: 10rem;
 }
 
 @media (max-width: 600px) {

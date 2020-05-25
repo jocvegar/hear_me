@@ -20,6 +20,7 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "@types/async-redis": "^1.1.1",
     "async-redis": "^1.1.7",
+    "bootstrap-vue": "^2.15.0",
     "cross-env": "^7.0.2",
     "nuxt": "^2.0.0"
   },
