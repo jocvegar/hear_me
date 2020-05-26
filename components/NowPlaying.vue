@@ -14,6 +14,7 @@
          
           <b-button variant="outline-info" v-if="href" :href="href">
             Escuchame
+            <i class="fab fa-spotify"></i>
           </b-button>
         </p>
       </div>   

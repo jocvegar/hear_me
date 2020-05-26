@@ -1,9 +1,7 @@
 <template>
   <div class="base">
     <Header :isAuth="isAuth"/>
-    <b-container fluid>
       <nuxt/>
-    </b-container>  
   </div>
 </template>
 

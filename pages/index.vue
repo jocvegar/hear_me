@@ -2,9 +2,7 @@
   <div>
     <b-container fluid class="pt-5">
       <b-row v-if="isConnected">
-        <b-col cols="12" md="4" class="text-center pt-5">
-        </b-col>
-        <b-col cols="12" md="8" class="pt-5">
+        <b-col cols="12" md="8" offset-md="2" class="pt-5">
           <h4 class="display-4 text-center">Escuchando de Spotify</h4>
           <br>
           <NowPlaying v-if="showTrack" :nowPlaying="track" :isPlaying="isPlaying"/>

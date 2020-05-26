@@ -1,8 +1,12 @@
 <template>
-  <b-container>
-      <h4 class="pt-5 text-center">
-          Muy Pronto!
-      </h4>
+  <b-container class="text-center">
+      <h3 class="pt-5">
+          Acerca De Mi
+      </h3>
+      <br>
+      <p class="lead mt-1">
+          Hago este tipo de cosas 
+      </p>
 </b-container>
 </template>
 
@@ -12,6 +16,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+p {
+    color:rgb(156, 156, 156);
+}
 </style>
