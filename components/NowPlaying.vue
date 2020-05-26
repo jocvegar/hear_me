@@ -79,7 +79,7 @@ export default {
     this.getNowPlaying()
     this.staleTimer = setInterval(() => {
       this.getNowPlaying()
-    }, 10000)
+    }, 20000)
   },
   methods: {
     updateProgress(progress = 0, duration = 0) {
@@ -119,7 +119,7 @@ export default {
           clearInterval(this.trackTimer)
           this.getNowPlaying()
         }
-      }, 100)
+      }, 200)
     }
   },
   beforeDestroy() {
